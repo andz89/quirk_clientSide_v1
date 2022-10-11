@@ -1,0 +1,293 @@
+header{
+   
+  .zoom_and_undo_container{
+    user-select: none;
+    margin: 5px 0px 0px;
+   display:flex;
+   justify-content: flex-end;
+   align-items: center;
+   gap: 10px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    margin-left: -20px;
+ }
+   .zoom-container{
+   background-color:rgba(87, 86, 86, 0.431);
+   padding: 3px;
+   border-radius: 3px;
+   font-size: .8rem;
+   width: 120px;
+   text-align: center;
+  align-items: center;
+   button{
+   color: #fff;
+   padding: 4px 10px;
+   transition: all 0.2s ease-in;
+   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+   border-radius:3px;
+   border: unset;
+    background-color:rgba(87, 86, 86, 0.431);
+    align-items: center;
+
+}
+
+   }
+
+   .undo-container{
+           button{
+               font-size: 20px;
+               width: 60px;
+               height: 25px;
+               text-align: center
+           }
+   
+   }
+    @include set-background($dark-color);
+    ul{
+        display: flex;
+        user-select: none;
+        width: 890px;
+        height: 40px;
+ .logo{
+
+    padding: 5px 5px;
+    cursor:pointer;
+ 
+    li{
+        padding: 0px 10px;
+        border: solid 1px rgb(102, 101, 101);
+        background-color: rgb(230, 227, 227);
+        color: teal;
+       
+     
+        cursor:pointer;
+    }
+ }
+
+ 
+ .file_name_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5px;
+  color: #fff;
+
+  div{
+    border: solid 1px rgb(230, 228, 228);
+    border-radius: 3px;
+    padding:0px 7px;
+    align-items: center;
+    max-width: 300px;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+    font-size: .8rem;
+
+    #file_name{
+    font-size: .8rem;
+}
+  }
+  }
+
+
+
+}
+}
+
+
+.sub_header{
+        
+        display: flex;
+        padding:8px 5px 0px 5px;
+        height: 45px;
+        justify-content: flex-start;
+        cursor: pointer;
+        user-select: none;
+        gap: 10px;
+        width: 890px;
+         
+         /* Dropdown Button */
+         .dropbtn {
+          cursor:pointer;
+          list-style-type: none;
+          font-size: 1.1rem;
+          padding: 1px 10px;
+          transition: all 0.2s ease-in;
+          color: #fff;
+          
+        }
+        .dropbtn:hover{
+          background:lighten($dark-color, 15%)
+        }
+        
+        
+        /* The container <div> - needed to position the dropdown content */
+        .dropdown {
+      
+          position: relative;
+          display: inline-block;
+        
+        }
+        
+        /* Dropdown Content (Hidden by Default) */
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #f1f1f1;
+          min-width: 160px;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+        }
+        
+        /* Links inside the dropdown */
+        .dropdown-content a {
+          color: black;
+          padding: 5px 16px;
+          text-decoration: none;
+          display: block;
+        }
+        
+        /* Change color of dropdown links on hover */
+        .dropdown-content a:hover {background-color: #ddd}
+        
+        /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+        .show {display:block;}
+        .hide {display:none;}
+      img{
+        //   border: 1px solid black;
+        width:27px;
+        height:27px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        outline-color: rgba(3, 3, 3, 0.733);
+        outline-width: 1px;
+        padding:3px;
+        border-radius:5px;
+           transition: all 0.2s ease-in;
+       
+      }
+      img:hover {
+          background-color: rgba(160, 158, 158, 0.712)
+      }
+         .align_canvas{
+        position: relative;
+        li{
+      
+          list-style: none
+        }
+        .align_canvas_container{
+          position: absolute;
+          background-color: rgb(219, 217, 217);
+          z-index: 4;
+          width:140px;
+          margin-top:5px;
+          padding: 2px;
+          display:none;
+          div{
+            padding: 1px 10px;
+          }
+          div:hover{
+            background-color:rgb(107, 168, 168)
+          }
+        }
+
+      }
+
+   
+     
+   
+
+}
+.save_cancel_crop{
+  display: none;
+  justify-content: flex-end;
+  width:70%;
+  gap: 10px;
+  text-align: center;
+  list-style-type: none;
+ align-items: center;
+ cursor: pointer;
+font-size: 12px;
+height: 45px;
+color: #fff;
+
+label{
+  font-size: 1rem;
+}
+strong{
+  font-size: 1rem;
+}
+
+  #save{
+    color: #333;
+    padding: 0 5px;
+    border-radius: 5%;
+    background-color: rgb(214, 214, 89);
+  }
+  #cancel{
+    padding: 0 5px;
+    border-radius: 5%;
+    background-color: rgb(133, 136, 136);
+  }
+  #reset_image{
+    padding: 0 5px;
+    border-radius: 5%;
+    background-color: rgb(33, 131, 131);
+  }
+}
+.save_cancel_clip{
+  display: none;
+  justify-content: flex-end;
+  width:70%;
+  gap: 10px;
+  text-align: center;
+  list-style-type: none;
+ align-items: center;
+ cursor: pointer;
+font-size: 12px;
+height: 45px;
+color: #fff;
+
+label{
+  font-size: 1rem;
+}
+strong{
+  font-size: 1rem;
+}
+
+  #save{
+    color: #333;
+    padding: 0 5px;
+    border-radius: 5%;
+    background-color: rgb(214, 214, 89);
+  }
+  #cancel{
+    padding: 0 5px;
+    border-radius: 5%;
+    background-color: rgb(133, 136, 136);
+  }
+  #reset_image{
+    padding: 0 5px;
+    border-radius: 5%;
+    background-color: rgb(33, 131, 131);
+  }
+}
+
+#alert-header{
+position: fixed;
+// display: flex;
+display: none;
+padding:2px 5px;
+justify-content: flex-start;
+cursor: pointer;
+user-select: none;
+gap: 10px;
+width: 100%;
+background-color:rgb(255, 237, 137);
+text-align: center;
+z-index: 4;
+opacity: .8;
+}
+
+
+      

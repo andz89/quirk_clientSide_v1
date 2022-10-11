@@ -1,0 +1,88 @@
+// @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Scope+One&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@700&display=swap');
+
+@import 'config';
+@import 'utilities';
+@import 'modal_createCanvas';
+@import 'canvas-tools';
+@import 'canvas';
+@import 'spinner';
+// @import 'modal-cropper';
+@import 'header';
+@import 'modal-clip';
+@import 'spinner';
+@import '_upload_dblclick';
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+  font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+  //  background-color:rgba(87, 86, 86, 0.431);
+    color: #333;
+    background-color: rgb(77, 72, 72);
+
+  
+}
+header{
+    width:100%;
+   
+}
+main{
+    display: flex;
+    margin: auto;
+    justify-content: space-around;
+    width: 100%;
+    position: relative;
+
+    
+}
+
+
+
+
+/* width */
+::-webkit-scrollbar {
+      width: 10px;
+        height: 8px;
+   border-radius: 10px;
+
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+   background-color: rgba(75, 75, 75, 0.712)
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(72, 127, 133); 
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(69, 89, 88); 
+}
+
+::-webkit-scrollbar-corner{
+   background-color: rgba(75, 75, 75, 0.712)
+
+}
+
+@media only screen and (max-width: 1400px) {
+  #canvas-tools-container{
+    zoom: 80%;
+  }
+
+}
+

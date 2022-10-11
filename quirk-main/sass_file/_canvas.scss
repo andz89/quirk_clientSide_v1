@@ -1,0 +1,60 @@
+   #canvas-background{
+            overflow-y: auto;
+            overflow-x: auto;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            padding: 50px;
+            background-color:#333;
+           margin: 0 auto;
+      .open_and_create_project{
+         cursor: pointer;
+         color: #fff;
+         width: 700px;
+         // height:500px;
+     
+         gap: 10px;
+         margin: auto;
+         display:flex;
+         justify-content: center;
+         align-items: center;
+         flex-direction: column;
+         border:rgb(100, 99, 99);
+         border-style:solid;
+         border-width: 1px;
+         padding:50px;
+         border-radius: 20px;
+         li{
+            
+            list-style: none;
+            padding:10px;
+            background-color: rgb(4, 133, 122);
+            border-radius:3px;
+            width:100%;
+           margin: 0 10px;
+           text-align: center;
+           
+         }
+         .drop-zone__input_json_container{
+            width:100%;
+            height:180px;
+            border-radius:6px;
+            border-style: dashed;
+            border-width: 2px;
+            margin-top:20px;
+            display: flex;
+            justify-content:center;
+            align-items:center;
+            font-size: 1.4rem;
+            padding:0 40px;
+            text-align:center;
+         }
+         .drop-zone--over {
+         border-style: solid;
+         }
+      }
+            .upper-canvas{
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            }
+         
+            }

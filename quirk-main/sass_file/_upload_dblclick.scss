@@ -1,0 +1,78 @@
+
+.upload_and_clip_container{
+  user-select: none;
+  animation-name: modalOpen;
+  animation-duration: 0.4s; 
+  display: none;
+  position: fixed;
+  z-index: 99999;
+  left: 0;
+  top: 0;
+  width:100%;
+  height: 100%;
+  overflow-x:hidden;
+  transition: transform 0.3s ease-out;
+  background-color: rgba(51, 51, 51, 0.637);
+  border-radius: 12px;
+  align-items: center;
+.modal-container{
+  background-color: rgb(218, 218, 218);
+  margin:auto;
+box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+border-radius:8px;
+align-items: center;
+display: flex;
+flex-direction: column;
+gap: 20px;
+width: 400px;
+height: auto;
+padding:10px 10px 5px;
+ .tools{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    align-items: center;
+    .upload-btn{
+      width: 50%;
+     
+      div{
+        font-size: 12px;
+        text-align: center;
+      }
+    }
+    .scale-container{
+ 
+     
+      width: 80%;
+      background-color: beige;
+      padding: 1px 5px;
+      div{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        input{
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .canvas-id-picture-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  
+  }
+
+ 
+  .buttons-container{
+    display: flex;
+    button{
+      width:100%;
+    }
+  }
+ 
+}
+}

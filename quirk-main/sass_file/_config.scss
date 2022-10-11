@@ -1,0 +1,78 @@
+$primary-color: #17a2b8;
+$dark-color:  rgb(70, 65, 65);
+$light-color: #bbbdc0;
+$danger-color: #ad3c47;
+$success-color: #3c9451;
+$white-color: #fff;
+$max-width: 1200px;
+
+@function set-text-color($color){
+    @if(lightness($color) >50){
+        @return #333;
+    }@else{
+        @return #fff;
+    }
+}
+
+
+//set background color and text color
+@mixin set-background($color){
+    background-color: $color;
+    color:set-text-color($color)
+}
+@mixin set-color($color){
+ 
+    color:$color;
+}
+
+
+//margin and padding
+$spaceAmount:(1, 2, 3, 4, 5);
+
+@each $space in $spaceAmount {
+    //margin
+    .m-#{$space}{  //all around margin
+        margin:#{$space}rem;
+    }
+     .my-#{$space}{ //vertical margin
+        margin:#{$space}rem 0;
+    }
+      .mx-#{$space}{ //horizontal margin
+        margin: 0 #{$space}rem;
+    }
+      .mt-#{$space}{ //top margin
+        margin:#{$space}rem 0 0 0;
+    }
+      .mb-#{$space}{ //bottom margin
+        margin:0 0 #{$space}rem 0 ;
+    }
+       .mr-#{$space}{ //rigth margin
+        margin:0 #{$space}rem 0 0;
+    }
+       .ml-#{$space}{ //left margin
+        margin:0 0 0 #{$space}rem;
+    }
+
+    //padding
+    .p-#{$space}{  //all around padding
+        margin: #{$space}rem;
+    }
+     .py-#{$space}{ //vertical padding
+        margin: #{$space}rem 0;
+    }
+      .px-#{$space}{ //horizontal padding
+        margin: 0 #{$space}rem;
+    }
+      .pt-#{$space}{ //top padding
+        margin: #{$space}rem 0 0 0;
+    }
+      .pb-#{$space}{ //bottom padding
+        margin:0 0 #{$space}rem 0 ;
+    }
+       .pr-#{$space}{ //rigth padding
+        margin:0 #{$space}rem 0 0;
+    }
+       .pl-#{$space}{ //left padding
+        margin:0 0 0 #{$space}rem;
+    }
+}

@@ -1,0 +1,104 @@
+#modal{
+  user-select: none;
+  animation-name: modalOpen;
+  animation-duration: 0.4s; 
+  display: flex;
+  position: fixed;
+  z-index: 99999;
+  left: 0;
+  top: 0;
+  width:100%;
+  height: 100%;
+  overflow-x:hidden;
+  transition: transform 0.3s ease-out;
+  background-color: rgba(51, 51, 51, 0.637);
+
+border-radius: 12px;
+}
+.modal-content{
+margin:auto;
+box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+border-radius:8px;
+color: #fff;
+align-items: center;
+}
+
+.modal-header{
+    margin: 0;
+    padding: 4px 6px;
+    height:35px;
+    display:flex;
+    justify-content:space-between;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    border-top-left-radius:8px;
+    border-top-right-radius:8px;
+ 
+    button{
+  
+        padding: 5px;
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+//create modal
+.modal-body{
+    padding: 10px;
+    color: #333;
+ 
+   
+}
+@keyframes modalOpen{
+
+from{opacity: 0}
+to{opacity: 1;}
+}
+
+.createCanvasFormModal{
+    
+    width: 400px;
+    height:400px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+   .size-content{
+        margin-top: 10px;
+   }
+   #project_name{
+       padding: 0 10px;
+        width: 100%;
+        height: 40px;
+        margin-bottom: 10px;
+        font-size: 16px;
+   }
+    select{
+        width: 100%;
+        height: 40px;
+        border-radius: 3px;
+        font-size:16px;
+        padding:10px;
+    }
+ 
+ 
+    .message_tips{
+        height:90px;
+        font-style:italic;
+        display: flex;
+        justify-content:flex-start;
+        align-items:center;
+        user-select:text;
+    }
+    button{
+        float: right;
+        margin-top:20px;
+        border-radius:3px;
+        height: 50px;
+    }
+}

@@ -1,0 +1,113 @@
+
+
+
+
+.bg{
+    &-primary {
+        @include set-background($primary-color);
+    }
+     &-dark {
+        @include set-background($dark-color);
+    }
+     &-danger {
+        @include set-background($danger-color);
+    }
+     &-success {
+        @include set-background($success-color);
+    }
+     &-light {
+        @include set-background($light-color);
+    }
+    &-white {
+        @include set-background($white-color);
+    }
+}
+.text{
+    &-primary {
+        @include set-color($primary-color);
+    }
+     &-dark {
+        @include set-color($dark-color);
+    }
+     &-danger {
+        @include set-color($danger-color);
+    }
+     &-success {
+        @include set-color($success-color);
+    }
+     &-light {
+        @include set-color($light-color);
+    }
+    &-white {
+        @include set-background($white-color);
+    }
+}
+.btn{
+    display: inline-block;
+    // background-color:$primary-color;
+    padding:0.2rem 1.3rem;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-right: 0.5rem;
+    outline: none;
+    transition: all 0.2s ease-in;
+    color: #333;
+    user-select: none;
+    border-radius: 2px;
+    &.btn-primary {
+        @include set-background($primary-color);
+
+        &:hover{
+            background:lighten($primary-color, 5%)
+        }
+    }
+    &.btn-dark{
+         @include set-background($dark-color);
+
+        &:hover{
+            background:lighten($dark-color, 5%)
+        }
+    }
+
+      &.btn-success{
+         @include set-background($success-color);
+
+        &:hover{
+            background:lighten($success-color, 5%)
+        }
+    }
+      &.btn-danger{
+         @include set-background($danger-color);
+
+        &:hover{
+            background:lighten($danger-color, 5%)
+        }
+    }
+        &.btn-light{
+         @include set-background($light-color);
+
+        &:hover{
+            background:lighten($light-color, 10%)
+        }
+    }
+
+    
+}
+
+
+.loader{
+    border:3px solid #f3f3f3;
+    border-top: 3px solid #3498db;
+    border-radius: 50%;
+    width: 23px;
+    height:23px;
+    animation: spin 2s linear infinite;
+    position: fixed;
+ 
+    
+}
+@keyframes spin{
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg)}
+}

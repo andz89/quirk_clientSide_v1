@@ -1,0 +1,72 @@
+/* Spinner 1 */
+.spinner-1:before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  margin-top: -30px;
+  margin-left: -30px;
+  border-radius: 50%;
+  border: 3px solid lightgray;
+  border-top-color: coral;
+  animation: spinner 0.7s linear infinite;
+}
+
+/* Spinner 2 */
+.spinner-2:before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  margin-top: -30px;
+  margin-left: -30px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top-color: coral;
+  border-bottom-color: coral;
+  animation: spinner 0.7s ease infinite;
+}
+
+/* Spinner 3 */
+.spinner-3:before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  margin-top: -30px;
+  margin-left: -30px;
+  border-radius: 50%;
+  border-top: 2px solid coral;
+  border-right: 2px solid transparent;
+  animation: spinner 0.7s linear infinite;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.modal-loader{
+  animation-name: modalOpen;
+  animation-duration: 0.4s; 
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width:100%;
+  height: 100%;
+  overflow-x:hidden;
+  transition: transform 0.3s ease-out;
+  background-color: rgba(51, 51, 51, 0.705);
+}
