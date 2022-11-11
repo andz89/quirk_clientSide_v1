@@ -6,16 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quirk</title>
 
-    <link rel="stylesheet" href="./style.min.css">
+    <link rel="stylesheet" href="../style/style.css">
 
 <link rel="stylesheet" href="./print_js/print.css">
 <style type="text/css" media="print">
     * { display: none; }
+
 </style>
 </head>
-<div id="AllContent">
-    <div class="PrintMessage">You are not authorized to print this document</div>
-</div>
+
 <body>
     <div class="upload_and_clip_container">
         <div class="modal-container">
@@ -122,9 +121,6 @@
     </div>
   
 
-    <div>
-        <div class="btn btn-primary add_image_clip">add image</div>
-    </div>
 
   
 </div>
@@ -256,6 +252,11 @@
                                     <input type="color" id="strokeColor" value="#059797">
                                    <span class="label-range"><label>Width </label> 
                                     <span class="input-range"> <strong>-</strong> <input id="strokeWidth" max="200" type="range"><strong>+</strong> </span>  </span>
+                                </div>
+
+                                <div class="slide">
+                                    <span>Previous Page</span>
+                                    <span id="next">Next Page</span>
                                 </div>
 
                         </div>

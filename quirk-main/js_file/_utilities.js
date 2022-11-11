@@ -194,13 +194,7 @@ export class Utilities extends Modification{
     }
 
    
-    //adjust scale range of input
-    //      let scale=  document.querySelector('#scale-image')
-    // //scale image
-    // scale.value = activeObj.scaleX
-    //       if(activeObj.width > 1000){
-    //            scale.max = 5
-    //       }
+
 
 
     }

@@ -312,6 +312,7 @@ this.canvas.sendBackwards(object)
 
 horizontal_object(){
 document.querySelector('#horizontal').onclick = () =>{
+
 if(this.canvas.getActiveObject().name === 'boxCropper'){
 return false;
 }

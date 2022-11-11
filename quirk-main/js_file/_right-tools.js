@@ -639,11 +639,13 @@ const loadAndUse =(font)=> {
 
 
         undo(){
-
+         
         let mods = 0
+   
 
         let undo_btn = document.querySelector("#undo")
         undo_btn.onclick = ()=>{
+          
         if (mods < this.canvas.state.length) {
         this.canvas.clear().renderAll();
         this.canvas.loadFromJSON(this.canvas.state[this.canvas.state.length - 1]);
@@ -691,7 +693,17 @@ const loadAndUse =(font)=> {
 
         }
         }
-
+        next_object(){
+          
+            let next = document.querySelector("#next")
+            let num = 0
+            next.onclick = ()=>{
+              
+                console.log(this.canvas._objects[num++])
+          
+          
+            }
+        }
         scale_object(){
         
             document.querySelector('#scale-image').oninput = (e)=>{

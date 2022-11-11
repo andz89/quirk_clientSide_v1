@@ -65,7 +65,7 @@ e.preventDefault()
     let fileHandle = null;
     reader.onload = () => {
     let canvas_saved =  JSON.parse(reader.result)
-
+   
     run_json_file(canvas_saved, fileHandle, fileName)
     document.querySelector('.open_and_create_project').style.display = 'none';
             
@@ -85,7 +85,7 @@ e.preventDefault()
 
 
 const  run_json_file = (canvas_saved, fileHandle, fileName)=>{
-
+  console.log(canvas_saved.json.objects[1])
 
   let canvasScale = 1;
   let SCALE_FACTOR = 1.1;
@@ -214,164 +214,165 @@ function lock_image(object, bollean){
 
 
 
-      let activeObj 
+//       let activeObj 
 
-  // //dbclick upload
-const upload_db= (o)=>{
-activeObj = o.target;
+//   // //dbclick upload
+// const upload_db= (o)=>{
+// activeObj = o.target;
 
-      canvas_created.add_image_width = activeObj.getScaledWidth()
-      canvas_created.add_image_height = activeObj.getScaledHeight()
-      canvas_created.add_image_top = activeObj.top;
-      canvas_created.add_image_left = activeObj.left
-  if( activeObj !== null && activeObj.name === 'uploader'){
+//       canvas_created.add_image_width = activeObj.getScaledWidth()
+//       canvas_created.add_image_height = activeObj.getScaledHeight()
+//       canvas_created.add_image_top = activeObj.top;
+//       canvas_created.add_image_left = activeObj.left
+//   if( activeObj !== null && activeObj.name === 'uploader'){
  
-    upload_dbclick()
+//     upload_dbclick()
   
     
-  }
+//   }
 
 
-}
-canvas_created.on({
-  'mouse:down':upload_db,
-})
+// }
+
+// canvas_created.on({
+//   'mouse:down':upload_db,
+// })
 
 
-  let canvas_2
-   //dbclick upload
-   const upload_dbclick = ()=>{
+//   let canvas_2
+//    //dbclick upload
+//    const upload_dbclick = ()=>{
 
 
-    // document.querySelector('.upload_and_clip_container').style.display = 'flex'
+//     // document.querySelector('.upload_and_clip_container').style.display = 'flex'
  
-    const canvas_init = (width, height) => {
-      let c = document.querySelector("#canvas-id-picture")
-      return new fabric.Canvas(c, {
-        width :fabric.util.parseUnit(width),
-        height :fabric.util.parseUnit(height),
-        backgroundColor:"#fff",
-        preserveObjectStacking:true,
-        selection:false
+//     const canvas_init = (width, height) => {
+//       let c = document.querySelector("#canvas-id-picture")
+//       return new fabric.Canvas(c, {
+//         width :fabric.util.parseUnit(width),
+//         height :fabric.util.parseUnit(height),
+//         backgroundColor:"#fff",
+//         preserveObjectStacking:true,
+//         selection:false
         
-      })
-      }
+//       })
+//       }
   
     
-      canvas_2 = canvas_init(activeObj.getScaledWidth(),  activeObj.getScaledHeight())
+//       canvas_2 = canvas_init(activeObj.getScaledWidth(),  activeObj.getScaledHeight())
   
-      canvas_2.on({
-        'mouse:up': mouseUp,
-      })
-      handleImage(canvas_2)
-  }
-  document.querySelector('.upload-clip').addEventListener('click',()=>{
-    handleImage(canvas_2)
-  })
-   async function  handleImage(canvas){
+//       canvas_2.on({
+//         'mouse:up': mouseUp,
+//       })
+//       handleImage(canvas_2)
+//   }
+//   document.querySelector('.upload-clip').addEventListener('click',()=>{
+//     handleImage(canvas_2)
+//   })
+//    async function  handleImage(canvas){
    
-    const [fileHandle] = await window.showOpenFilePicker({
-      types: [{
-      description: 'Images',
-      accept: {
-      "image/jpeg": [".jpg", ".jpeg"],
-      "image/png": [".png"],
-      "image/svg+xml": [".svg"],
-      }
-      }],
-      })
+//     const [fileHandle] = await window.showOpenFilePicker({
+//       types: [{
+//       description: 'Images',
+//       accept: {
+//       "image/jpeg": [".jpg", ".jpeg"],
+//       "image/png": [".png"],
+//       "image/svg+xml": [".svg"],
+//       }
+//       }],
+//       })
 
-      const file = await fileHandle.getFile();
-      let object = canvas_2.getObjects().length
-    if(object === 1){
-      let obj = canvas_2.getObjects()
-      canvas_2.remove(obj[0]);
-      canvas_2.discardActiveObject()
-    }
-    document.querySelector('.upload-clip').innerHTML = 'Change image'
+//       const file = await fileHandle.getFile();
+//       let object = canvas_2.getObjects().length
+//     if(object === 1){
+//       let obj = canvas_2.getObjects()
+//       canvas_2.remove(obj[0]);
+//       canvas_2.discardActiveObject()
+//     }
+//     document.querySelector('.upload-clip').innerHTML = 'Change image'
     
 
-      let reader = new FileReader();
-      reader.readAsDataURL(file)
+//       let reader = new FileReader();
+//       reader.readAsDataURL(file)
       
-      reader.onload = () => {
-      fabric.Image.fromURL(reader.result, (img)=>{
-      img.name = img.type
-      img.originX ='center',
-      img.originY ='center',
+//       reader.onload = () => {
+//       fabric.Image.fromURL(reader.result, (img)=>{
+//       img.name = img.type
+//       img.originX ='center',
+//       img.originY ='center',
       
-      canvas.viewportCenterObject(img)
-      img.scaleToWidth(canvas.getWidth() - 20)
+//       canvas.viewportCenterObject(img)
+//       img.scaleToWidth(canvas.getWidth() - 20)
 
-      canvas.add(img)
-      document.querySelector('.scale-input').value = img.scaleX
-      })
+//       canvas.add(img)
+//       document.querySelector('.scale-input').value = img.scaleX
+//       })
       
-      };
-    document.querySelector('.upload_and_clip_container').style.display = 'flex'
+//       };
+//     document.querySelector('.upload_and_clip_container').style.display = 'flex'
 
-  }
+//   }
  
 
-  const mouseUp = (o)=>{
-    let activeObj = o.target;
-    if(activeObj === null){
-      return false
-  }
-    document.querySelector('.scale-input').value = activeObj.scaleX
-  }
+//   const mouseUp = (o)=>{
+//     let activeObj = o.target;
+//     if(activeObj === null){
+//       return false
+//   }
+//     document.querySelector('.scale-input').value = activeObj.scaleX
+//   }
 
-  document.querySelector('.scale-input').oninput = (e)=>{
+//   document.querySelector('.scale-input').oninput = (e)=>{
           
-    let object = canvas_2.getObjects()
+//     let object = canvas_2.getObjects()
 
-    if(object[0] === undefined){
-        return false
-    }
+//     if(object[0] === undefined){
+//         return false
+//     }
 
-    object[0].scaleX = e.target.value;
-    object[0].scaleY = e.target.value;
+//     object[0].scaleX = e.target.value;
+//     object[0].scaleY = e.target.value;
 
     
-    canvas_2.renderAll()
+//     canvas_2.renderAll()
 
-}
+// }
 
-  //close modal
-    document.querySelector('.upload_and_clip_container .btn-danger').addEventListener('click',(e)=>{
+//   //close modal
+//     document.querySelector('.upload_and_clip_container .btn-danger').addEventListener('click',(e)=>{
 
-      canvas_2.dispose()
-    document.querySelector('.upload-clip').innerHTML = 'Upload image'
+//       canvas_2.dispose()
+//     document.querySelector('.upload-clip').innerHTML = 'Upload image'
 
-      document.querySelector('.upload_and_clip_container').style.display = 'none'
+//       document.querySelector('.upload_and_clip_container').style.display = 'none'
 
-    })
-    document.querySelector('.upload_and_clip_container .save').addEventListener('click', (e)=>{
+//     })
+//     document.querySelector('.upload_and_clip_container .save').addEventListener('click', (e)=>{
       
-      document.querySelector('.upload_and_clip_container').style.display = 'none'
-      let img_canvas = canvas_2.toDataURL()
-      fabric.Image.fromURL(img_canvas, (img)=>{
-        img.name = img.type
-        // img.width = canvas_created.add_image_width 
-        // img.height = canvas_created.add_image_height; 
-        img.top = canvas_created.add_image_top ;
-        img.left = canvas_created.add_image_left ;
-        img.originX = 'center'
-        img.originY = 'center'
-        img.name = 'aa'
-        lock_image(img,true)
-        img.setControlsVisibility({
-          mt: false,mb: false,ml: false, mr: false,tr: false,tl: false,br: false,bl: false, mtr: false
-        });
-        img.stroke = 'red'
-        canvas_created.add(img)
-        })
-      canvas_2.dispose()
-      if(activeObj.type == 'image'){
-        canvas_created.remove(activeObj)
+//       document.querySelector('.upload_and_clip_container').style.display = 'none'
+//       let img_canvas = canvas_2.toDataURL()
+//       fabric.Image.fromURL(img_canvas, (img)=>{
+//         img.name = img.type
+//         // img.width = canvas_created.add_image_width 
+//         // img.height = canvas_created.add_image_height; 
+//         img.top = canvas_created.add_image_top ;
+//         img.left = canvas_created.add_image_left ;
+//         img.originX = 'center'
+//         img.originY = 'center'
+//         img.name = 'aa'
+//         lock_image(img,true)
+//         img.setControlsVisibility({
+//           mt: false,mb: false,ml: false, mr: false,tr: false,tl: false,br: false,bl: false, mtr: false
+//         });
+//         img.stroke = 'red'
+//         canvas_created.add(img)
+//         })
+//       canvas_2.dispose()
+//       if(activeObj.type == 'image'){
+//         canvas_created.remove(activeObj)
 
-      }
-    })
+//       }
+//     })
  
 
  

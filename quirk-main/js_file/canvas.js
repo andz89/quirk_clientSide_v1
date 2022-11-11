@@ -1,20 +1,20 @@
 import {Right_tools} from "./_right-tools.js";
 import {Menu_tools} from "./_menu-tools.js";
-import { Modification } from "./_modification.js";
+import {Modification} from "./_modification.js";
 import {Utilities} from "./_utilities.js";
-export class Canvas extends Modification{
-create_main_canvas =()=>{
+export class Canvas extends Modification {
+    create_main_canvas = () => {
 
-this.canvas.state = [];
+        this.canvas.state = [];
 
 
-let utils = new Utilities({
-        canvas : this.canvas,
-        width : this.width,
-        height :this.height,
-        canvasScale: this.canvasScale,
-        SCALE_FACTOR: this.SCALE_FACTOR , 
-        fileHandle: this.fileHandle,
+        let utils = new Utilities({
+            canvas: this.canvas,
+            width: this.width,
+            height: this.height,
+            canvasScale: this.canvasScale,
+            SCALE_FACTOR: this.SCALE_FACTOR,
+            fileHandle: this.fileHandle
         })
 
         utils.deleteObjects()
@@ -27,19 +27,16 @@ let utils = new Utilities({
         utils.files_modal_button('#clip-to')
 
 
-       
-
-let menu_tools = new Menu_tools({
-        canvas : this.canvas,
-        width : this.width,
-        height :this.height,
-        canvasScale: this.canvasScale,
-        SCALE_FACTOR: this.SCALE_FACTOR,
-        fileHandle: this.fileHandle,
+        let menu_tools = new Menu_tools({
+            canvas: this.canvas,
+            width: this.width,
+            height: this.height,
+            canvasScale: this.canvasScale,
+            SCALE_FACTOR: this.SCALE_FACTOR,
+            fileHandle: this.fileHandle
         })
 
 
-    
         menu_tools.insertText('.dropbtn-insert-text')
         menu_tools.uploadImageLocalFile('#upload_image')
         menu_tools.save_file_json()
@@ -61,27 +58,24 @@ let menu_tools = new Menu_tools({
         menu_tools.print()
         menu_tools.crop();
         menu_tools.trim();
-    
-      
+
+
         menu_tools.clip()
         menu_tools.upload_and_clip()
-   
-  
-    
 
 
-        //shapes
+        // shapes
         menu_tools.insert_square()
         menu_tools.insert_circle()
-  
 
-  let right_tools = new Right_tools({
-        canvas : this.canvas,
-        width : this.width,
-        height :this.height,
-        canvasScale: this.canvasScale,
-        SCALE_FACTOR: this.SCALE_FACTOR,
-        fileHandle: this.fileHandle,
+
+        let right_tools = new Right_tools({
+            canvas: this.canvas,
+            width: this.width,
+            height: this.height,
+            canvasScale: this.canvasScale,
+            SCALE_FACTOR: this.SCALE_FACTOR,
+            fileHandle: this.fileHandle
         })
         right_tools.fontSize('#fontSize')
         right_tools.backgroundColor()
@@ -101,26 +95,12 @@ let menu_tools = new Menu_tools({
         right_tools.textAlign_right()
         right_tools.fontStyle()
         right_tools.undo()
-    
+
         // right_tools.scale_object()
-   
-
-       
-
-        
-
-   
- 
-  
-    
-   
+        right_tools.next_object()
 
 
- 
-}
-
-
+    }
 
 
 }
-
