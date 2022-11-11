@@ -96,9 +96,6 @@ export class Canvas extends Modification {
         right_tools.fontStyle()
         right_tools.undo()
 
-        // right_tools.scale_object()
-        right_tools.next_object()
-
 
     }
 
