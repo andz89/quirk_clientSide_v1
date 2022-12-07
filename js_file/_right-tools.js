@@ -613,7 +613,7 @@ export class Right_tools extends Modification {
             } else {
                 object.set("fontFamily", e.target.value);
                 this.canvas.renderAll();
-                console.log('2')
+
 
             }
         };

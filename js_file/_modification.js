@@ -34,7 +34,7 @@ export class Modification {
             object.perPixelTargetFind = false;
             this.canvas.setActiveObject(object);
             this.canvas.add(object);
-            object.scaleToWidth(500)
+            object.scaleToWidth(200)
             this.canvas.viewportCenterObject(object)
 
 
@@ -47,17 +47,13 @@ export class Modification {
             this.canvas.add(object);
 
             // set the size of an object in the canvas
-            if (object.getScaledHeight() > object.getScaledWidth()) {
-
-                // object.scaleToHeight(this.canvas.current_height-10)
+            if (object.getScaledHeight() > object.getScaledWidth()) { // object.scaleToHeight(this.canvas.current_height-10)
                 console.log('heigth')
             }
-            if (object.getScaledWidth() > object.getScaledHeight()) {
-                // object.scaleToWidth(this.canvas.current_width-10)
+            if (object.getScaledWidth() > object.getScaledHeight()) { // object.scaleToWidth(this.canvas.current_width-10)
 
             }
-            if (object.getScaledWidth() == object.getScaledHeight()) {
-                // object.scaleToHeight(this.canvas.current_height-10)
+            if (object.getScaledWidth() == object.getScaledHeight()) { // object.scaleToHeight(this.canvas.current_height-10)
 
             }
             // scale the corner size
