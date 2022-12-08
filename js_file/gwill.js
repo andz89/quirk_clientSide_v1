@@ -1,32 +1,5 @@
-//  class ActiveBtn{
-//     constructor(className, property){
-//       this.className = className;
-//       this.styleProperty = property.styleProperty;
-//       this.customClassName = property.customClassName
-//       this.active()
-//     }
-//     active(){
-//         document.querySelector('body').addEventListener('click', (e)=>{
-
-//         if(e.target.classList.contains(this.className)){
-//         //make all btns to set the background to none
-//         let a =  document.querySelectorAll(`.${this.className}`)
-//         a.forEach((e)=>{
-//         e.style.backgroundColor = '';
-//         this.customClassName === true? e.classList.remove(this.styleProperty):false
-//         })
-
-//         e.target.style.backgroundColor = this.styleProperty
-//         this.customClassName === true ? e.target.classList.add(this.styleProperty):false
-//         } 
-
-//         })
-//         }
-// }
-
-
-class Modal{
-    constructor(id,property ){
+class Modal {
+    constructor(id, property) {
         this.id = id
         this.width = property.width;
         this.height = property.height;
@@ -37,12 +10,11 @@ class Modal{
         this.windowClickClose = property.windowClickClose;
         this.modalContentBackgroundColor = property.modalContentBackgroundColor;
         this.createModal();
-     
-    }
-   createModal(){
 
-    let element = 
-    `
+    }
+    createModal() {
+
+        let element = `
     <div class="modal-content">
             <div class="modal-header" >
                 <div class="modal-title">This is a modal</div>
@@ -53,73 +25,84 @@ class Modal{
             </div>
     </div>
     `
-    //element create by user
-    let divElementCreatedByUser = document.querySelector(` ${this.id}`)
-    divElementCreatedByUser.style.display = 'none'
-  
-    //create new div inside the element create by user
-    let newDiv = document.createElement('div')
-    newDiv.id = 'modal';
-    newDiv.innerHTML = element;
-    divElementCreatedByUser.appendChild(newDiv);
+        // element create by user
+        let divElementCreatedByUser = document.querySelector(` ${
+            this.id
+        }`)
+        divElementCreatedByUser.style.display = 'none'
+
+        // create new div inside the element create by user
+        let newDiv = document.createElement('div')
+        newDiv.id = 'modal';
+        newDiv.innerHTML = element;
+        divElementCreatedByUser.appendChild(newDiv);
 
 
-                                    //css style of new modal
-    //modal backgroundColor
-    document.querySelector(` ${this.id} #modal`).style.backgroundColor = this.backgroundColor ? this.backgroundColor : 'rgba(51, 51, 51, 0.705)';
+        // css style of new modal
+        // modal backgroundColor
+        document.querySelector(` ${
+            this.id
+        } #modal`).style.backgroundColor = this.backgroundColor ? this.backgroundColor : 'rgba(51, 51, 51, 0.705)';
 
-    let modalContent = document.querySelector(`${this.id} .modal-content`)
-    //modal-content backgroundColor color
-    modalContent.style.backgroundColor = this.modalContentBackgroundColor ? this.modalContentBackgroundColor : 'rgb(231, 223, 223)'
-    //modal-content width
-    modalContent.style.width =  this.width ? this.width : '400px';
-    //modal-content height
-    modalContent.style.height =  this.height ? this.height : '200px';
-    //modal-header background color
-    document.querySelector(` ${this.id} .modal-header`).style.backgroundColor = this.modalHeaderColor ? this.modalHeaderColor:'rgb(240, 71, 71)'//red color;
-    //modal title innerHTML
-    document.querySelector(` ${this.id} .modal-title`).innerHTML = this.title ? this.title : 'Modal';
-  
+        let modalContent = document.querySelector(`${
+            this.id
+        } .modal-content`)
+        // modal-content backgroundColor color
+        modalContent.style.backgroundColor = this.modalContentBackgroundColor ? this.modalContentBackgroundColor : 'rgb(231, 223, 223)'
+        // modal-content width
+        modalContent.style.width = this.width ? this.width : '400px';
+        // modal-content height
+        modalContent.style.height = this.height ? this.height : '200px';
+        // modal-header background color
+        document.querySelector(` ${
+            this.id
+        } .modal-header`).style.backgroundColor = this.modalHeaderColor ? this.modalHeaderColor : 'rgb(240, 71, 71)'
+        // red color;
+        // modal title innerHTML
+        document.querySelector(` ${
+            this.id
+        } .modal-title`).innerHTML = this.title ? this.title : 'Modal';
 
-    //close-click on backgroundColor
-    if(this.windowClickClose === undefined || this.windowClickClose === true ){
-             window.addEventListener('click',(e)=>{
-            if(e.target.id == 'modal'){
-            document.querySelector(this.id).style.display = 'none';
-            }
+
+        // close-click on backgroundColor
+        if (this.windowClickClose === undefined || this.windowClickClose === true) {
+            window.addEventListener('click', (e) => {
+                if (e.target.id == 'modal') {
+                    document.querySelector(this.id).style.display = 'none';
+                }
             })
-    }
-    
-    
-    //close button
-    document.querySelector(`${this.id} #modal-btn-close`).onclick = ()=>{
-    document.querySelector(this.id).style.display = 'none';
+        }
 
-    }
- 
-    //show modal button
-    document.querySelector(this.showButton).onclick =()=>{
-    document.querySelector(this.id).style.display ='flex'
-    }
-  
+
+        // close button
+        document.querySelector(`${
+            this.id
+        } #modal-btn-close`).onclick = () => {
+            document.querySelector(this.id).style.display = 'none';
+
+        }
+
+        // show modal button
+        document.querySelector(this.showButton).onclick = () => {
+            document.querySelector(this.id).style.display = 'flex'
+        }
+
 
     }
 
     bodyContent(element, callback) {
-     let div = document.createElement('div');
-     div.innerHTML = element;
-     document.querySelector(` ${this.id} .modal-body`).appendChild(div)
- 
-    callback()
+        let div = document.createElement('div');
+        div.innerHTML = element;
+        document.querySelector(` ${
+            this.id
+        } .modal-body`).appendChild(div)
+
+        callback()
     }
 
-  
-
-   
-
-  
 
 }
 
-export { Modal}
-
+export {
+    Modal
+}

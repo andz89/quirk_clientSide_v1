@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quirk</title>
+    <title>Quirk Client Side</title>
 
     <link rel="stylesheet" href="style.css">
 
@@ -16,31 +16,7 @@
 </head>
 
 <body>
-    <div class="upload_and_clip_container">
-        <div class="modal-container">
-            <div class="tools">
-                <div class="upload-btn">
-                    <div class="btn btn-dark btn-sm upload-clip" > Upload Image </div> 
 
-                </div>
-                <div class="scale-container">
-                
-                   <div> <small>size</small> -<input type="range" class="scale-input" step=".00001" min=".01" max=".5">+</div>
-
-                </div>
-            </div>
-            <div class="canvas-id-picture-container"> 
-
-                <canvas id="canvas-id-picture"> </canvas>
-        
-            </div>
-            <div class="buttons-container">
-                <button class="btn btn-sm btn-danger"> Cancel</button>
-                <button class="btn btn-sm btn-primary save"> Save</button>  
-            </div>
-           
-        </div>
-    </div>
 
 <div class="modal-loader"></div>
  
@@ -49,7 +25,7 @@
 
 <header>
  <ul> 
-    <div class="logo"> <li href="">QUIRK</li></div>
+    <div class="logo"> <li href="">QUIRK Client Side</li></div>
     
    
 
@@ -142,14 +118,6 @@
 <main>
   
 <div id="canvas-background" class="canvas-container" >
-<div class="open_and_create_project">
-<li id="showCreateCanvasModalBtn">Create Canvas</li>
-<li id="open_file" style="background-color: rgb(209, 208, 208); color: #333;">Open Existing File</li>
-<div class="drop-zone__input_json_container">
-<p><small> Drag and drop file here to </small>   <br><strong>"AUTO CREATE A COPY" </strong> <br> <small> of your existing file</small></p>
-<input type="file" name="myFile" class="drop-zone__input_json" style="display: none">
-</div>
-</div>
 
 
 <input type="file" name="myFile" class="drop-zone__input" style="display: none">
@@ -176,7 +144,7 @@
                         <li title="lock Element"  id="lock" class="lock-btn  ">&#x1F512;</li>
                         <li title="group" id="group" class="folder-btn  ">&#128448;</li>
                         <li title="ungroup"  id="ungroup" class="folder-btn  ">&#128449;</li>
-                        <li title="ungroup"  id="ungroup-fake" class="folder-btn  ungroup-fake">&#128449;</li>
+                       
                     </ul>
                 </div>
                   
@@ -202,7 +170,7 @@
                                 <input type="color" id="color" class="color  " value="#008080">
                                 
                                 <!-- color -->
-                                <label id="bold" >  <img  class=" " src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3LjMzIDguNTgiPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDojY2NjO308L3N0eWxlPjwvZGVmcz48dGl0bGU+QXNzZXQgMTA8L3RpdGxlPjxnIGlkPSJMYXllcl8yIiBkYXRhLW5hbWU9IkxheWVyIDIiPjxnIGlkPSJMYXllcl8zIiBkYXRhLW5hbWU9IkxheWVyIDMiPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTS4zMywxMC4zMnYtMWwuOTEtLjE4VjNMLjMzLDIuNzh2LTFINC4xNGE0LjA5LDQuMDksMCwwLDEsMi4zNi41OSwyLDIsMCwwLDEsLjg1LDEuNzZBMS44OSwxLjg5LDAsMCwxLDcsNS4xNmExLjk0LDEuOTQsMCwwLDEtLjkyLjcsMi4wOCwyLjA4LDAsMCwxLC44Ni40LDEuNjMsMS42MywwLDAsMSwuNTEuNjgsMi4xMywyLjEzLDAsMCwxLC4xNy44OCwyLjI0LDIuMjQsMCwwLDEtLjgxLDEuODcsMy42OCwzLjY4LDAsMCwxLTIuMy42M1pNMyw1LjM0SDQuMmExLjcxLDEuNzEsMCwwLDAsMS4wNi0uMjksMSwxLDAsMCwwLC4zNy0uODIsMSwxLDAsMCwwLS4zNy0uODgsMS44MywxLjgzLDAsMCwwLTEuMTItLjI4SDNaTTMsOUg0LjU1YTEuNTksMS41OSwwLDAsMCwxLS4zQTEuMDgsMS4wOCwwLDAsMCw2LDcuODJhMS42NiwxLjY2LDAsMCwwLS4xNC0uNzEsMSwxLDAsMCwwLS40MS0uNDQsMS42OCwxLjY4LDAsMCwwLS43Mi0uMTRIM1oiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0wLjMzIC0xLjc0KSIvPjwvZz48L2c+PC9zdmc+"" width="13" alt="">
+                                <label id="bold" >  <img  class=" " src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3LjMzIDguNTgiPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDojY2NjO308L3N0eWxlPjwvZGVmcz48dGl0bGU+QXNzZXQgMTA8L3RpdGxlPjxnIGlkPSJMYXllcl8yIiBkYXRhLW5hbWU9IkxheWVyIDIiPjxnIGlkPSJMYXllcl8zIiBkYXRhLW5hbWU9IkxheWVyIDMiPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTS4zMywxMC4zMnYtMWwuOTEtLjE4VjNMLjMzLDIuNzh2LTFINC4xNGE0LjA5LDQuMDksMCwwLDEsMi4zNi41OSwyLDIsMCwwLDEsLjg1LDEuNzZBMS44OSwxLjg5LDAsMCwxLDcsNS4xNmExLjk0LDEuOTQsMCwwLDEtLjkyLjcsMi4wOCwyLjA4LDAsMCwxLC44Ni40LDEuNjMsMS42MywwLDAsMSwuNTEuNjgsMi4xMywyLjEzLDAsMCwxLC4xNy44OCwyLjI0LDIuMjQsMCwwLDEtLjgxLDEuODcsMy42OCwzLjY4LDAsMCwxLTIuMy42M1pNMyw1LjM0SDQuMmExLjcxLDEuNzEsMCwwLDAsMS4wNi0uMjksMSwxLDAsMCwwLC4zNy0uODIsMSwxLDAsMCwwLS4zNy0uODgsMS44MywxLjgzLDAsMCwwLTEuMTItLjI4SDNaTTMsOUg0LjU1YTEuNTksMS41OSwwLDAsMCwxLS4zQTEuMDgsMS4wOCwwLDAsMCw2LDcuODJhMS42NiwxLjY2LDAsMCwwLS4xNC0uNzEsMSwxLDAsMCwwLS40MS0uNDQsMS42OCwxLjY4LDAsMCwwLS43Mi0uMTRIM1oiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0wLjMzIC0xLjc0KSIvPjwvZz48L2c+PC9zdmc+" width="13" alt="">
                                 </label>
                                 
                                 <!-- italic -->
@@ -327,10 +295,7 @@
 
 
 </main>
-<div style="display: none">
-    <img id="sample" src="/quirk-main/img.jpeg" alt="">
-    <canvas id="canvas-3"></canvas>
-</div>
+
 
 
 
