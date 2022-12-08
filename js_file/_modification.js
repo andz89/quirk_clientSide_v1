@@ -34,7 +34,7 @@ export class Modification {
             object.perPixelTargetFind = false;
             this.canvas.setActiveObject(object);
             this.canvas.add(object);
-            object.scaleToWidth(200)
+            // object.scaleToWidth(200)
             this.canvas.viewportCenterObject(object)
 
 

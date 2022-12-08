@@ -3,7 +3,9 @@ import {Canvas} from "./js_file/canvas.js";
 import {Open_file} from "./js_file/_open_file.js";
 
 window.addEventListener('click', (e) => {
-    console.log(e.target.id ? 'id:' + e.target.id : 'className:' + e.target.classList);
+    console.log('id:' + e.target.id);
+    console.log('className:' + e.target.className);
+
 })
 // ==================window height size=======================//
 let header_size = document.querySelector('header').offsetHeight

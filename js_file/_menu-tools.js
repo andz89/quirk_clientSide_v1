@@ -7,12 +7,15 @@ export class Menu_tools extends Modification { // textbox
             let object = new fabric.Textbox('Your Text Here', {
                 textAlign: "center",
 
-                fontSize: 12, // this.canvas.getWidth() * .17,
+                fontSize: 100, // this.canvas.getWidth() * .17,
                 id: this.uniqueId(),
                 dirty: true,
                 // width: 400,//this.canvas.getWidth() * .80
-                width: 100,
-                splitByGrapheme: true
+                width: 500,
+                splitByGrapheme: true,
+                // height: 1900,
+                centeredScaling: true
+
             })
             object.name = object.type
 
@@ -416,6 +419,7 @@ export class Menu_tools extends Modification { // textbox
     align_left() {
         let align_left = document.querySelector('#align_left')
         align_left.onclick = () => {
+            console.log('align text');
             let object = this.canvas.getActiveObjects()
             if (object.length < 2) {
                 return false

@@ -466,11 +466,22 @@ export class Right_tools extends Modification {
                     obj.selectable = false;
                     obj.set("lockMovementX", true)
                     obj.set("lockMovementY", true)
-                    obj.set("lockScalingX", true)
+                    // obj.set("lockScalingX", true)
                     obj.set("lockScalingY", true)
                     obj.set("lockRotation", true)
                     this.canvas.discardActiveObject()
                     this.canvas.renderAll();
+                    obj.setControlsVisibility({
+                        mt: false,
+                        mb: false,
+                        ml: false,
+                        mr: false,
+                        tr: false,
+                        tl: false,
+                        br: false,
+                        bl: false,
+                        mtr: false
+                    });
                 })
                 this.display_lockObjects(lockObjects)
 
@@ -489,12 +500,22 @@ export class Right_tools extends Modification {
                 object.selectable = true;
                 object.set("lockMovementX", true)
                 object.set("lockMovementY", true)
-                object.set("lockScalingX", true)
+                // object.set("lockScalingX", true)
                 object.set("lockScalingY", true)
                 object.set("lockRotation", true)
                 this.canvas.renderAll();
 
-
+                object.setControlsVisibility({
+                    mt: false,
+                    mb: false,
+                    // ml: false,
+                    // mr: false,
+                    tr: false,
+                    tl: false,
+                    br: false,
+                    bl: false,
+                    mtr: false
+                });
             }
 
         }
@@ -538,11 +559,13 @@ export class Right_tools extends Modification {
     textAlign_left() {
         document.querySelector('#alignLeftText')
         alignLeftText.onclick = () => {
+            console.log(window.getSelection().toString());
             let object = this.canvas.getActiveObject();
             if (! object) {
                 return false;
             }
             object.set("textAlign", "left")
+
             object.dirty = true;
             this.canvas.renderAll()
         }

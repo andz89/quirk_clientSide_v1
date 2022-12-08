@@ -115,42 +115,6 @@ export class Utilities extends Modification {
             // -------------------------------------//
 
 
-            // opacity
-            // let opacity =  document.querySelector('#opacity')
-
-            // if(activeObj.opacity === 1){
-            // opacity.value = 10
-            // }
-            // if(activeObj.opacity === 0.9){
-            // opacity.value = 9
-            // }
-            // if(activeObj.opacity === 0.8){
-            // opacity.value = 8
-            // }
-            // if(activeObj.opacity === 0.7){
-            // opacity.value = 7
-            // }
-            // if(activeObj.opacity === 0.6){
-            // opacity.value = 6
-            // }
-            // if(activeObj.opacity === 0.5){
-            // opacity.value = 5
-            // }
-            // if(activeObj.opacity === 0.4){
-            // opacity.value = 4
-            // }
-            // if(activeObj.opacity === 0.3){
-            // opacity.value = 3
-            // }
-            // if(activeObj.opacity === 0.2){
-            // opacity.value = 2
-            // }
-            // if(activeObj.opacity === 0.1){
-            // opacity.value = 1
-            // }
-            // if(activeObj.opacity === 0){
-            // opacity.value = 0
-            // }
             // -------------------------------------//
 
             if (activeObj.group !== undefined) {
@@ -381,7 +345,11 @@ export class Utilities extends Modification {
                 // }
             }
         }
-
+        const scale_textbox = (o) => {
+            let activeObj = o.target;
+            activeObj.height = 50;
+            console.log('sss');
+        }
         this.canvas.on({
             'selection:updated': select_object,
             'selection:created': select_object,
@@ -389,7 +357,8 @@ export class Utilities extends Modification {
             'object:scaling': scale_object,
             'mouse:up': mouseUp_object,
             'object:scaling': scale_clip_cropper_box,
-            'mouse:down': mouseDown_object
+            'mouse:down': mouseDown_object,
+            'object:scaling': scale_textbox
 
 
         });
